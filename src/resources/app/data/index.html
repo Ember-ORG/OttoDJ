@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="scripts/script.js"></script>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Lato:400'>
+  <link rel='stylesheet prefetch' href='styles/waves.min.css'>
+  <link rel="stylesheet" href="styles/font.css">
+  <link rel="stylesheet" href="styles/player.css">
+  <script src="scripts/jquery.adaptive-backgrounds.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>OttoDJ</title>
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="images/favicon.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+  <link rel="apple-touch-icon-precomposed" href="images/favicon.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="images/favicon.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <link rel="shortcut icon" href="images/favicon.png">
+
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.green-light_green.min.css" />
+</head>
+
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base" onload="client.start()" id="body">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+      <div class="mdl-layout--large-screen-only mdl-layout__header-row"></div>
+      <div class="mdl-layout--large-screen-only mdl-layout__header-row" style="justify-content: center;">
+        <h3 style="text-align: center">OttoDJ</h3>
+      </div>
+      <div class="mdl-layout--large-screen-only mdl-layout__header-row"></div>
+    </header>
+    <main class="mdl-layout__content">
+        <div class="container">
+      <div class="player">
+        <div class="mask"></div>
+        <ul class="player-info info-one">
+          <li>Memories (royalty free)</li>
+          <li>Bensound.com</li>
+          <li>3.50</li>
+        </ul>
+        <ul class="player-info info-two">
+          <li>Memories (royalty free)</li>
+          <li>Bensound.com</li>
+          <li><span id="duration"></span><i> / </i>3.50</li>
+        </ul>
+        <div id="play-button" class="unchecked">
+          <i class="icon icon-play"></i>
+        </div>
+        <div class="control-row">
+          <div class="waves-animation-one"></div>
+          <div class="waves-animation-two"></div>
+          <div id="pause-button">
+            <i class="icon"></i>
+          </div>
+          <div class="seek-field">
+            <input id="audioSeekBar" min="0" max="334" step="1" value="0" type="range" oninput="audioSeekBar()" onchange="this.oninput()">
+          </div>
+          <div class="volume-icon">
+            <i class="icon-volume-up"></i>
+          </div>
+          <div class="volume-field">
+            <input type="range" min="0" max="100" value="100" step="1" oninput="audio.volume = this.value/100" onchange="this.oninput()">
+          </div>
+        </div>
+      </div>
+    </div>
+    <audio id="audio-player" ontimeupdate="SeekBar()" ondurationchange="CreateSeekBar()" preload="auto" loop>
+      <source src="audio/bensound-memories.ogg" type="audio/ogg">
+      <source src="audio/bensound-memories.mp3" type="audio/mpeg">
+    </audio>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="micBtn">
+      Toggle Mic
+    </button>
+    </main>
+  </div>
+  <script src="client.js"></script>
+  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src='scripts/waves.min.js'></script>
+  <script src="scripts/index.js"></script>
+</body>
+</html>

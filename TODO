@@ -1,0 +1,17 @@
+* Make seek bar functional
+* Make volume slider work
+* Fix bug where artists are not updated if they don't exist
+* Allow user to select an entire folder of music by clicking on the folder
+* Support mp3 images
+* Support more than just mp3
+* Add sample rate customization option
+* Remove data races
+* Make it build for Windows
+
+Complete:
+* Make pause/play button work properly
+* Remove button lag
+* Edit build process to download all necessary resources so that the app can be used without internet
+* Make long song titles condensed (maybe set limit to song title length and if it is exceeded add "...")
+* Do not attempt to play a song if a song is not selected
+* Allow user to open more songs after the previously selected songs finish and update metadata
